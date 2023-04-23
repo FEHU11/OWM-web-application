@@ -41,7 +41,7 @@ return [
                 'useTLS' => false,
 //                'useTLS' => true,
                 'host' => '127.0.0.1', //this is your localhost
-//                'host' => '192.168.8.101', //this is your localhost
+//                'host' => '193.227.34.40', //this is your localhost
                 'port' => env('LARAVEL_WEBSOCKETS_PORT', 6001),
                 'scheme' => 'http'
             ],

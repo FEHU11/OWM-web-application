@@ -30,17 +30,31 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
  */
 
 
-// import Echo from 'laravel-echo';
+import Echo from 'laravel-echo'
+console.log('Here')
 
 window.Pusher = require('pusher-js');
+
+window.Echo = new Echo({
+    broadcaster: 'pusher',
+    key: process.env.MIX_PUSHER_APP_KEY,
+    cluster: process.env.MIX_PUSHER_APP_CLUSTER,
+    wsHost: window.location.hostname,
+    wsPort: 6001,
+    wssPort: 6001,
+    forceTLS: true, //возможно для обхода wss поставить false
+    encrypted: true, //и здесь тоже
+    enabledTransports: ['ws', 'wss']
+});
 
 // window.Echo = new Echo({
 //     broadcaster: 'pusher',
 //     key: process.env.MIX_PUSHER_APP_KEY,
-//     // cluster: process.env.MIX_PUSHER_APP_CLUSTER,
-//     forceTLS: false,
 //     wsHost: window.location.hostname,
 //     wsPort: 6001,
-//     encrypted: false,
-//     enabledTransports: ['ws', 'wss']
+//     wssPort: 6001,
+//     forceTLS: true,
+//     disableStats: true,
+//     enabledTransports: ['ws', 'wss'],
 // });
+

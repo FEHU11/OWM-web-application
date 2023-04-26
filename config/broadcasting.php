@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'default' => env('BROADCAST_DRIVER', 'null'),
+    'default' => env('BROADCAST_DRIVER', 'pusher'),
 
     /*
     |--------------------------------------------------------------------------
@@ -30,6 +30,28 @@ return [
 
     'connections' => [
 
+        // 'pusher' => [
+        //     'driver' => 'pusher',
+        //     'key' => env('PUSHER_APP_KEY'),
+        //     'secret' => env('PUSHER_APP_SECRET'),
+        //     'app_id' => env('PUSHER_APP_ID'),
+        //     'options' => [
+        //         'cluster' => env('PUSHER_APP_CLUSTER'),
+        //         'encrypted' => false,
+        //         'useTLS' => false,
+        //     //    'useTLS' => true,
+        //         'host' => '127.0.0.1', //this is your localhost
+        //     //    'host' => '193.227.34.40', //this is your localhost
+        //         // 'port' => env('LARAVEL_WEBSOCKETS_PORT', 6001),
+        //         'port' => 6001,
+        //         'scheme' => 'http',
+        //         'curl_options' => [
+        //             CURLOPT_SSL_VERIFYHOST => 0,
+        //             CURLOPT_SSL_VERIFYPEER => 0,
+        //         ]
+        //     ],
+        // ],
+
         'pusher' => [
             'driver' => 'pusher',
             'key' => env('PUSHER_APP_KEY'),
@@ -37,13 +59,17 @@ return [
             'app_id' => env('PUSHER_APP_ID'),
             'options' => [
                 'cluster' => env('PUSHER_APP_CLUSTER'),
-                'encrypted' => false,
-                'useTLS' => false,
-//                'useTLS' => true,
-                'host' => '127.0.0.1', //this is your localhost
-//                'host' => '193.227.34.40', //this is your localhost
-                'port' => env('LARAVEL_WEBSOCKETS_PORT', 6001),
-                'scheme' => 'http'
+                'host' => '127.0.0.1',
+                // 'host' => '193.227.34.40',
+                'port' => 6001,
+                'scheme' => 'http',
+                'curl_options' => [
+                    CURLOPT_SSL_VERIFYHOST => 0,
+                    CURLOPT_SSL_VERIFYPEER => 0,
+                ]
+            ],
+            'client_options' => [
+                'verify' =>true, // to disable TLS checks
             ],
         ],
 

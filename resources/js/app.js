@@ -7,8 +7,8 @@
 require('./bootstrap');
 
 // const port = 6001;
-// let ws = new WebSocket(`ws://${window.location.hostname}:${port}/app/livepost_key?protocol=7&client=js&version=7.5.0&flash=false`);
-//
+// let ws = new WebSocket(`ws://${window.location.hostname}:${port}/app/livepost_key?protocol=7&client=js&version=4.3.1&flash=false`);
+
 // ws.onopen = function(e) {
 //     //Subscribe to the channel
 //     console.log('opened!');
@@ -16,7 +16,7 @@ require('./bootstrap');
 //     ws.send(JSON.stringify({"event":"pusher:subscribe","data":{"auth":"","channel":"websocket-channel"}}));
 //     console.log('sent!');
 // }
-//
+
 // ws.onmessage = function(msg) {
 //     console.log('message event',msg);
 //     console.log('message',JSON.parse(msg.data).data && JSON.parse(JSON.parse(msg.data).data).message);
@@ -29,5 +29,7 @@ require('./bootstrap');
 */
 // $page_no2 = `{{<?php echo unserialize(${document.currentScript.getAttribute('supportedLocales')}); ?>}}`;
 // $me = JSON.parse(msg.data).data && JSON.parse(JSON.parse(msg.data).data).message;
+
+
 require('./App/App');
 

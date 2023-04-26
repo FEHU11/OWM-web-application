@@ -164,11 +164,18 @@
         'options' => 
         array (
           'cluster' => 'mt1',
-          'encrypted' => false,
-          'useTLS' => false,
           'host' => '127.0.0.1',
-          'port' => '6001',
+          'port' => 6001,
           'scheme' => 'http',
+          'curl_options' => 
+          array (
+            81 => 0,
+            64 => 0,
+          ),
+        ),
+        'client_options' => 
+        array (
+          'verify' => true,
         ),
       ),
       'ably' => 
@@ -713,7 +720,7 @@
         'secret' => 'livepost_secret',
         'path' => NULL,
         'capacity' => NULL,
-        'enable_client_messages' => false,
+        'enable_client_messages' => true,
         'enable_statistics' => true,
       ),
     ),
@@ -741,6 +748,8 @@
       'local_cert' => NULL,
       'local_pk' => NULL,
       'passphrase' => NULL,
+      'allow_self_signed' => true,
+      'verify_peer' => false,
     ),
     'channel_manager' => 'BeyondCode\\LaravelWebSockets\\WebSockets\\Channels\\ChannelManagers\\ArrayChannelManager',
   ),
